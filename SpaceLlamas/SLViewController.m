@@ -7,30 +7,27 @@
 //
 
 #import "SLViewController.h"
-#import "SLMyScene.h"
+#import "SLTitleScene.h"
 
 @implementation SLViewController
 
-- (void)viewDidLoad
+- (void)viewWillLayoutSubviews
 {
-    [super viewDidLoad];
+    [super viewWillLayoutSubviews];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+	if (!skView.scene){
+		skView.showsFPS = NO;
+		skView.showsNodeCount = NO;
     
-    // Create and configure the scene.
-    SKScene * scene = [SLMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
-}
-
-- (BOOL)shouldAutorotate
-{
-    return YES;
+		// Create and configure the scene.
+		SKScene * scene = [SLTitleScene sceneWithSize:skView.bounds.size];
+		scene.scaleMode = SKSceneScaleModeAspectFill;
+		
+		// Present the scene.
+		[skView presentScene:scene];
+	}
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -40,6 +37,10 @@
     } else {
         return UIInterfaceOrientationMaskAll;
     }
+}
+-(BOOL)prefersStatusBarHidden
+{
+	return YES;
 }
 
 - (void)didReceiveMemoryWarning

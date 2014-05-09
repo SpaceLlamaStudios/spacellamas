@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SLMyScene : SKScene
+@interface SLTitleScene : SKScene
 
 @end

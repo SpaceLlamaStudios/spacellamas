@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F24EB1AB191C66C600B3F13E /* player-spacellama-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EB1AA191C66C600B3F13E /* player-spacellama-normal.png */; };
+		F24EB1AD191C673C00B3F13E /* title-background.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EB1AC191C673C00B3F13E /* title-background.png */; };
 		F2A3843217B325D400CD7333 /* SLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A3843117B325D400CD7333 /* SLPlayer.m */; };
 		F2F5C8DF176A79F300043C42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8DE176A79F300043C42 /* Foundation.framework */; };
 		F2F5C8E1176A79F300043C42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8E0176A79F300043C42 /* CoreGraphics.framework */; };
@@ -17,14 +19,13 @@
 		F2F5C8F1176A79F300043C42 /* SLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C8F0176A79F300043C42 /* SLAppDelegate.m */; };
 		F2F5C8F4176A79F300043C42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F5C8F2176A79F300043C42 /* Main.storyboard */; };
 		F2F5C8F7176A79F300043C42 /* SLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C8F6176A79F300043C42 /* SLViewController.m */; };
-		F2F5C8FA176A79F300043C42 /* SLMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C8F9176A79F300043C42 /* SLMyScene.m */; };
+		F2F5C8FA176A79F300043C42 /* SLTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C8F9176A79F300043C42 /* SLTitleScene.m */; };
 		F2F5C8FE176A79F300043C42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F5C8FD176A79F300043C42 /* Images.xcassets */; };
 		F2F5C905176A79F300043C42 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C904176A79F300043C42 /* XCTest.framework */; };
 		F2F5C906176A79F300043C42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8DE176A79F300043C42 /* Foundation.framework */; };
 		F2F5C907176A79F300043C42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8E2176A79F300043C42 /* UIKit.framework */; };
 		F2F5C90F176A79F300043C42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2F5C90D176A79F300043C42 /* InfoPlist.strings */; };
 		F2F5C911176A79F300043C42 /* SpaceLlamasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C910176A79F300043C42 /* SpaceLlamasTests.m */; };
-		F2F5C91C176A7B7200043C42 /* player-spacellama-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F5C91B176A7B7200043C42 /* player-spacellama-normal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F24EB1AA191C66C600B3F13E /* player-spacellama-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-spacellama-normal.png"; sourceTree = "<group>"; };
+		F24EB1AC191C673C00B3F13E /* title-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title-background.png"; sourceTree = "<group>"; };
 		F2A3843017B325D400CD7333 /* SLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLPlayer.h; path = Player/SLPlayer.h; sourceTree = "<group>"; };
 		F2A3843117B325D400CD7333 /* SLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLPlayer.m; path = Player/SLPlayer.m; sourceTree = "<group>"; };
 		F2F5C8DB176A79F300043C42 /* SpaceLlamas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLlamas.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,15 +57,14 @@
 		F2F5C8F3176A79F300043C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2F5C8F5176A79F300043C42 /* SLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLViewController.h; sourceTree = "<group>"; };
 		F2F5C8F6176A79F300043C42 /* SLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLViewController.m; sourceTree = "<group>"; };
-		F2F5C8F8176A79F300043C42 /* SLMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLMyScene.h; sourceTree = "<group>"; };
-		F2F5C8F9176A79F300043C42 /* SLMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLMyScene.m; sourceTree = "<group>"; };
+		F2F5C8F8176A79F300043C42 /* SLTitleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTitleScene.h; sourceTree = "<group>"; };
+		F2F5C8F9176A79F300043C42 /* SLTitleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTitleScene.m; sourceTree = "<group>"; };
 		F2F5C8FD176A79F300043C42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F2F5C903176A79F300043C42 /* SpaceLlamasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLlamasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F5C904176A79F300043C42 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F2F5C90C176A79F300043C42 /* SpaceLlamasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceLlamasTests-Info.plist"; sourceTree = "<group>"; };
 		F2F5C90E176A79F300043C42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F2F5C910176A79F300043C42 /* SpaceLlamasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceLlamasTests.m; sourceTree = "<group>"; };
-		F2F5C91B176A7B7200043C42 /* player-spacellama-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-spacellama-normal.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F24EB1A8191C546D00B3F13E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		F24EB1A9191C66C600B3F13E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F24EB1AC191C673C00B3F13E /* title-background.png */,
+				F24EB1AA191C66C600B3F13E /* player-spacellama-normal.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		F2A3842F17B3259B00CD7333 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,16 +151,17 @@
 		F2F5C8E6176A79F300043C42 /* SpaceLlamas */ = {
 			isa = PBXGroup;
 			children = (
+				F24EB1A8191C546D00B3F13E /* iPad */,
 				F2A3842F17B3259B00CD7333 /* Player */,
 				F2F5C8EF176A79F300043C42 /* SLAppDelegate.h */,
 				F2F5C8F0176A79F300043C42 /* SLAppDelegate.m */,
 				F2F5C8F2176A79F300043C42 /* Main.storyboard */,
 				F2F5C8F5176A79F300043C42 /* SLViewController.h */,
 				F2F5C8F6176A79F300043C42 /* SLViewController.m */,
-				F2F5C8F8176A79F300043C42 /* SLMyScene.h */,
-				F2F5C8F9176A79F300043C42 /* SLMyScene.m */,
+				F2F5C8F8176A79F300043C42 /* SLTitleScene.h */,
+				F2F5C8F9176A79F300043C42 /* SLTitleScene.m */,
 				F2F5C8FD176A79F300043C42 /* Images.xcassets */,
-				F2F5C91A176A7AA600043C42 /* Assets */,
+				F24EB1A9191C66C600B3F13E /* Assets */,
 				F2F5C8E7176A79F300043C42 /* Supporting Files */,
 			);
 			path = SpaceLlamas;
@@ -175,14 +194,6 @@
 				F2F5C90D176A79F300043C42 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F2F5C91A176A7AA600043C42 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				F2F5C91B176A7B7200043C42 /* player-spacellama-normal.png */,
-			);
-			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2F5C91C176A7B7200043C42 /* player-spacellama-normal.png in Resources */,
+				F24EB1AB191C66C600B3F13E /* player-spacellama-normal.png in Resources */,
 				F2F5C8EB176A79F300043C42 /* InfoPlist.strings in Resources */,
+				F24EB1AD191C673C00B3F13E /* title-background.png in Resources */,
 				F2F5C8FE176A79F300043C42 /* Images.xcassets in Resources */,
 				F2F5C8F4176A79F300043C42 /* Main.storyboard in Resources */,
 			);
@@ -285,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F5C8ED176A79F300043C42 /* main.m in Sources */,
-				F2F5C8FA176A79F300043C42 /* SLMyScene.m in Sources */,
+				F2F5C8FA176A79F300043C42 /* SLTitleScene.m in Sources */,
 				F2F5C8F7176A79F300043C42 /* SLViewController.m in Sources */,
 				F2A3843217B325D400CD7333 /* SLPlayer.m in Sources */,
 				F2F5C8F1176A79F300043C42 /* SLAppDelegate.m in Sources */,
@@ -415,9 +427,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpaceLlamas/SpaceLlamas-Prefix.pch";
 				INFOPLIST_FILE = "SpaceLlamas/SpaceLlamas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "17DD9A67-D5A1-4B35-8994-BA295CB94CB0";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -431,9 +445,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpaceLlamas/SpaceLlamas-Prefix.pch";
 				INFOPLIST_FILE = "SpaceLlamas/SpaceLlamas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "17DD9A67-D5A1-4B35-8994-BA295CB94CB0";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
