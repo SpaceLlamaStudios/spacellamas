@@ -8,6 +8,7 @@
 
 #import "SLTitleScene.h"
 #import "SLPlayer.h"
+#import "SLLevelManager.h"
 
 @implementation SLTitleScene
 {
@@ -16,6 +17,8 @@
 	SKNode *_background;
 	SKLabelNode *_titleLabel;
 	SKLabelNode *_subtitleLabel;
+	SKLabelNode *_startButton;
+	SLLevelManager *_levelManager;
 }
 
 -(id)initWithSize:(CGSize)size {    
@@ -28,7 +31,8 @@
 	
 	//[self initPlayer];
 	[self setUpLayers];
-	[self setupTitle];
+	[self setUpTitle];
+	[self setUpLevelManager];
 	
     return self;
 }
@@ -52,7 +56,7 @@
 	}
 }
 //Manage Title Screen
-- (void)setupTitle {
+- (void)setUpTitle {
 	_background = [SKSpriteNode spriteNodeWithImageNamed:@"title-background"];
 	_background.position = CGPointMake(self.size.width/2, self.size.height/2 + 50);
 	[_gameLayer addChild:_background];
@@ -75,6 +79,15 @@
 	_subtitleLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
 	[_hudLayer addChild:_subtitleLabel];
 	
+	//button
+	_startButton = [SKLabelNode labelNodeWithFontNamed:fontName];
+	_startButton.text = @"Tap anywhere to Play";
+	_startButton.fontSize = [self fontSizeForDevice:12.0];
+	_startButton.fontColor = [SKColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+	_startButton.position = CGPointMake(self.size.width/2, self.size.height * 0.3);
+	_startButton.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+	[_hudLayer addChild:_startButton];
+	
 	//Animations
 	[_titleLabel setAlpha:0.0];
 	[_subtitleLabel setAlpha:0.0];
@@ -93,25 +106,23 @@
 	[_subtitleLabel runAction:[SKAction sequence:@[delay, fadeInAndSlideUpSubtitle]]];
 	[_background runAction: [SKAction sequence:@[delay, fadeInAndSlideDownBackground]]];
 }
-
+- (void)setUpLevelManager {
+	_levelManager = [[SLLevelManager alloc] init];
+}
 #pragma mark - World Build
--(void)buildWorld
-{
 
+
+#pragma mark - Game Start
+- (void) startGame {
+	_levelManager.gameState = GameStatePlay;
+	
+	NSArray *nodes = @[_titleLabel, _subtitleLabel, _startButton, _background];
+	for (SKNode *node in nodes) {
+		SKAction *fadeOut = [SKAction fadeOutWithDuration:0.2];
+		SKAction *removeNode = [SKAction removeFromParent];
+		[node runAction: [SKAction sequence:@[fadeOut, removeNode]]];
+	}
 }
-
--(void)addBackground
-{
-
-}
-
--(void)addHUD
-{
-
-}
-
-#pragma mark - Level Start
-
 
 #pragma mark - Player
 -(void) initPlayer
@@ -129,6 +140,14 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+#pragma mark - Touch Listeners
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	if (_levelManager.gameState == GameStateMainMenu){
+		[self startGame];
+		return;
+	}
 }
 
 @end
