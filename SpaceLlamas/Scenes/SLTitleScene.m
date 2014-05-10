@@ -1,6 +1,6 @@
 //
 //  SLMyScene.m
-//  Space Llamas: You Only Live Thrice
+//  Space Llamas: Llamas in Spaaaaace.
 //
 //  Created by Elsie Ng on 2013-06-13.
 //  Copyright (c) 2013 Space Llama Studios. All rights reserved.
@@ -9,6 +9,7 @@
 #import "SLTitleScene.h"
 #import "SLPlayer.h"
 #import "SLLevelManager.h"
+#import "SLGameScene.h"
 
 @implementation SLTitleScene
 {
@@ -21,7 +22,8 @@
 	SLLevelManager *_levelManager;
 }
 
--(id)initWithSize:(CGSize)size {    
+-(id)initWithSize:(CGSize)size
+{
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
@@ -38,7 +40,8 @@
 }
 
 //Manage game layers
--(void)setUpLayers{
+-(void)setUpLayers
+{
 	_gameLayer = [SKNode node];
 	[self addChild:_gameLayer];
 	_hudLayer = [SKNode node];
@@ -46,7 +49,8 @@
 }
 
 #pragma mark - Helper methods
-- (CGFloat)fontSizeForDevice:(CGFloat)fontSize {
+- (CGFloat)fontSizeForDevice:(CGFloat)fontSize
+{
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		return fontSize * 2;
 	}
@@ -95,7 +99,7 @@
 	[_background setAlpha:0.0];
 	
 	SKAction *delay = [SKAction waitForDuration:1.0];
-	SKAction *startButtonDelay = [SKAction waitForDuration:6.0];
+	SKAction *startButtonDelay = [SKAction waitForDuration:3.0];
 	SKAction *fadeIn = [SKAction fadeInWithDuration:1.0];
 	SKAction *fadeOut = [SKAction fadeOutWithDuration:1.0];
 	SKAction *slideUpTitle = [SKAction moveTo: CGPointMake(_titleLabel.position.x, _titleLabel.position.y + 50) duration: 2.0];
@@ -111,14 +115,16 @@
 	[_startButton runAction: [SKAction sequence:@[startButtonDelay, pulseAnimation]]];
 	[_background runAction: [SKAction sequence:@[delay, fadeInAndSlideDownBackground]]];
 }
-- (void)setUpLevelManager {
+- (void)setUpLevelManager
+{
 	_levelManager = [[SLLevelManager alloc] init];
 }
 #pragma mark - World Build
 
 
 #pragma mark - Game Start
-- (void) startGame {
+- (void) startGame
+{
 	_levelManager.gameState = GameStatePlay;
 	
 	NSArray *nodes = @[_titleLabel, _subtitleLabel, _startButton, _background];
@@ -127,6 +133,10 @@
 		SKAction *removeNode = [SKAction removeFromParent];
 		[node runAction: [SKAction sequence:@[fadeOut, removeNode]]];
 	}
+	SKView * skView = (SKView *)self.view;
+	SKScene * scene = [SLGameScene sceneWithSize:skView.bounds.size];
+	scene.scaleMode = SKSceneScaleModeAspectFill;
+	[skView presentScene:scene];
 }
 
 #pragma mark - Player

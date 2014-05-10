@@ -11,6 +11,7 @@
 		F24EB1AD191C673C00B3F13E /* title-background.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EB1AC191C673C00B3F13E /* title-background.png */; };
 		F26FBF11191D8E230002D149 /* SLLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F26FBF10191D8E230002D149 /* SLLevelManager.m */; };
 		F2A3843217B325D400CD7333 /* SLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A3843117B325D400CD7333 /* SLPlayer.m */; };
+		F2C094E1191EDA5A00E7B583 /* SLGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C094E0191EDA5A00E7B583 /* SLGameScene.m */; };
 		F2F5C8DF176A79F300043C42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8DE176A79F300043C42 /* Foundation.framework */; };
 		F2F5C8E1176A79F300043C42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8E0176A79F300043C42 /* CoreGraphics.framework */; };
 		F2F5C8E3176A79F300043C42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8E2176A79F300043C42 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		F26FBF10191D8E230002D149 /* SLLevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLevelManager.m; sourceTree = "<group>"; };
 		F2A3843017B325D400CD7333 /* SLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLPlayer.h; path = Player/SLPlayer.h; sourceTree = "<group>"; };
 		F2A3843117B325D400CD7333 /* SLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLPlayer.m; path = Player/SLPlayer.m; sourceTree = "<group>"; };
+		F2C094DF191EDA5A00E7B583 /* SLGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLGameScene.h; path = Scenes/SLGameScene.h; sourceTree = "<group>"; };
+		F2C094E0191EDA5A00E7B583 /* SLGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLGameScene.m; path = Scenes/SLGameScene.m; sourceTree = "<group>"; };
 		F2F5C8DB176A79F300043C42 /* SpaceLlamas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLlamas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F5C8DE176A79F300043C42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F2F5C8E0176A79F300043C42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,8 +63,8 @@
 		F2F5C8F3176A79F300043C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2F5C8F5176A79F300043C42 /* SLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLViewController.h; sourceTree = "<group>"; };
 		F2F5C8F6176A79F300043C42 /* SLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLViewController.m; sourceTree = "<group>"; };
-		F2F5C8F8176A79F300043C42 /* SLTitleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTitleScene.h; sourceTree = "<group>"; };
-		F2F5C8F9176A79F300043C42 /* SLTitleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTitleScene.m; sourceTree = "<group>"; };
+		F2F5C8F8176A79F300043C42 /* SLTitleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLTitleScene.h; path = Scenes/SLTitleScene.h; sourceTree = "<group>"; };
+		F2F5C8F9176A79F300043C42 /* SLTitleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLTitleScene.m; path = Scenes/SLTitleScene.m; sourceTree = "<group>"; };
 		F2F5C8FD176A79F300043C42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F2F5C903176A79F300043C42 /* SpaceLlamasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLlamasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F5C904176A79F300043C42 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -120,6 +123,17 @@
 			name = Player;
 			sourceTree = "<group>";
 		};
+		F2C094DE191ED59C00E7B583 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F2F5C8F8176A79F300043C42 /* SLTitleScene.h */,
+				F2F5C8F9176A79F300043C42 /* SLTitleScene.m */,
+				F2C094DF191EDA5A00E7B583 /* SLGameScene.h */,
+				F2C094E0191EDA5A00E7B583 /* SLGameScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		F2F5C8D2176A79F300043C42 = {
 			isa = PBXGroup;
 			children = (
@@ -161,8 +175,7 @@
 				F2F5C8F2176A79F300043C42 /* Main.storyboard */,
 				F2F5C8F5176A79F300043C42 /* SLViewController.h */,
 				F2F5C8F6176A79F300043C42 /* SLViewController.m */,
-				F2F5C8F8176A79F300043C42 /* SLTitleScene.h */,
-				F2F5C8F9176A79F300043C42 /* SLTitleScene.m */,
+				F2C094DE191ED59C00E7B583 /* Scenes */,
 				F2F5C8FD176A79F300043C42 /* Images.xcassets */,
 				F24EB1A9191C66C600B3F13E /* Assets */,
 				F2F5C8E7176A79F300043C42 /* Supporting Files */,
@@ -249,6 +262,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Space Llama Studios";
 				TargetAttributes = {
+					F2F5C8DA176A79F300043C42 = {
+						DevelopmentTeam = K4K25T28LX;
+					};
 					F2F5C902176A79F300043C42 = {
 						TestTargetID = F2F5C8DA176A79F300043C42;
 					};
@@ -304,6 +320,7 @@
 				F2F5C8ED176A79F300043C42 /* main.m in Sources */,
 				F2F5C8FA176A79F300043C42 /* SLTitleScene.m in Sources */,
 				F2F5C8F7176A79F300043C42 /* SLViewController.m in Sources */,
+				F2C094E1191EDA5A00E7B583 /* SLGameScene.m in Sources */,
 				F2A3843217B325D400CD7333 /* SLPlayer.m in Sources */,
 				F2F5C8F1176A79F300043C42 /* SLAppDelegate.m in Sources */,
 				F26FBF11191D8E230002D149 /* SLLevelManager.m in Sources */,
@@ -429,13 +446,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpaceLlamas/SpaceLlamas-Prefix.pch";
 				INFOPLIST_FILE = "SpaceLlamas/SpaceLlamas-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "17DD9A67-D5A1-4B35-8994-BA295CB94CB0";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -447,13 +465,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpaceLlamas/SpaceLlamas-Prefix.pch";
 				INFOPLIST_FILE = "SpaceLlamas/SpaceLlamas-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "17DD9A67-D5A1-4B35-8994-BA295CB94CB0";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
