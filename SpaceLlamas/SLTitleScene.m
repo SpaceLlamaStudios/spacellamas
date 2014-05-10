@@ -91,19 +91,24 @@
 	//Animations
 	[_titleLabel setAlpha:0.0];
 	[_subtitleLabel setAlpha:0.0];
+	[_startButton setAlpha:0.0];
 	[_background setAlpha:0.0];
 	
 	SKAction *delay = [SKAction waitForDuration:1.0];
+	SKAction *startButtonDelay = [SKAction waitForDuration:6.0];
 	SKAction *fadeIn = [SKAction fadeInWithDuration:1.0];
+	SKAction *fadeOut = [SKAction fadeOutWithDuration:1.0];
 	SKAction *slideUpTitle = [SKAction moveTo: CGPointMake(_titleLabel.position.x, _titleLabel.position.y + 50) duration: 2.0];
 	SKAction *slideUpSubtitle = [SKAction moveTo: CGPointMake(_subtitleLabel.position.x, _subtitleLabel.position.y + 50) duration: 2.0];
 	SKAction *slideDownBackground = [SKAction moveTo: CGPointMake(_background.position.x, _background.position.y - 50) duration: 2.0];
 	SKAction *fadeInAndSlideUpTitle = [SKAction group:@[slideUpTitle, fadeIn]];
 	SKAction *fadeInAndSlideUpSubtitle = [SKAction group:@[slideUpSubtitle, fadeIn]];
 	SKAction *fadeInAndSlideDownBackground = [SKAction group:@[slideDownBackground, fadeIn]];
+	SKAction *pulseAnimation = [SKAction repeatActionForever:[SKAction sequence:@[fadeOut,fadeIn]]];
 	
 	[_titleLabel runAction:[SKAction sequence:@[delay, fadeInAndSlideUpTitle]]];
 	[_subtitleLabel runAction:[SKAction sequence:@[delay, fadeInAndSlideUpSubtitle]]];
+	[_startButton runAction: [SKAction sequence:@[startButtonDelay, pulseAnimation]]];
 	[_background runAction: [SKAction sequence:@[delay, fadeInAndSlideDownBackground]]];
 }
 - (void)setUpLevelManager {
