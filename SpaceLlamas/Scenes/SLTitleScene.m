@@ -9,7 +9,7 @@
 #import "SLTitleScene.h"
 #import "SLPlayer.h"
 #import "SLLevelManager.h"
-#import "SLGameScene.h"
+#import "SLLevelSelectScene.h"
 
 @implementation SLTitleScene
 {
@@ -127,17 +127,15 @@
 {
 	_levelManager.gameState = GameStatePlay;
 	
-	NSArray *nodes = @[_titleLabel, _subtitleLabel, _startButton, _background];
-	for (SKNode *node in nodes) {
-		SKAction *fadeOut = [SKAction fadeOutWithDuration:0.2];
-		SKAction *removeNode = [SKAction removeFromParent];
-		[node runAction: [SKAction sequence:@[fadeOut, removeNode]]];
-	}
-	SKView * skView = (SKView *)self.view;
-	SKScene * scene = [SLGameScene sceneWithSize:skView.bounds.size];
+	SKView * currentView = (SKView *)self.view;
+	SKScene * scene = [SLLevelSelectScene sceneWithSize:currentView.bounds.size];
 	scene.scaleMode = SKSceneScaleModeAspectFill;
-	[skView presentScene:scene];
+	
+	//ONE LINE IN SPRITEKIT!!!
+	SKTransition *fade = [SKTransition fadeWithDuration:1.0];
+	[currentView presentScene:scene transition:fade];
 }
+
 
 #pragma mark - Player
 -(void) initPlayer

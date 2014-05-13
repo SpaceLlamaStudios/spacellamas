@@ -2,7 +2,7 @@
 //  SLGameScene.m
 //  SpaceLlamas
 //
-//  Created by Elsie Ng on 2014-05-10.
+//  Created by Elsie Ng on 2014-05-12.
 //  Copyright (c) 2014 Space Llama Studios. All rights reserved.
 //
 
@@ -12,7 +12,6 @@
 {
 	SKNode *_gameLayer;
 	SKNode *_background;
-	
 }
 
 -(id)initWithSize:(CGSize)size
@@ -39,8 +38,8 @@
 
 -(void)setUpGame
 {
-	_background = [SKSpriteNode spriteNodeWithImageNamed:@"title-background"];
-	_background.position = CGPointMake(self.size.width/2, self.size.height/2 + 50);
+	_background = [SKSpriteNode spriteNodeWithImageNamed:@"level-background-01"];
+	_background.position = CGPointMake(self.size.width/2, self.size.height/2);
 	[_gameLayer addChild:_background];
 }
 
