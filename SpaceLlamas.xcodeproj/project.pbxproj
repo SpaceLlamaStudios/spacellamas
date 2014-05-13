@@ -14,6 +14,7 @@
 		F2ADA4F61921B2EF0053C02F /* SLGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F2ADA4F51921B2EF0053C02F /* SLGameScene.m */; };
 		F2ADA4FA1921B5B70053C02F /* level-background-01.png in Resources */ = {isa = PBXBuildFile; fileRef = F2ADA4F91921B5B70053C02F /* level-background-01.png */; };
 		F2C094E1191EDA5A00E7B583 /* SLLevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C094E0191EDA5A00E7B583 /* SLLevelSelectScene.m */; };
+		F2EBB7321921C63600D1EE71 /* SLLevels.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2EBB7311921C63600D1EE71 /* SLLevels.plist */; };
 		F2F5C8DF176A79F300043C42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8DE176A79F300043C42 /* Foundation.framework */; };
 		F2F5C8E1176A79F300043C42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8E0176A79F300043C42 /* CoreGraphics.framework */; };
 		F2F5C8E3176A79F300043C42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8E2176A79F300043C42 /* UIKit.framework */; };
@@ -55,6 +56,7 @@
 		F2C094DF191EDA5A00E7B583 /* SLLevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLLevelSelectScene.h; path = Scenes/SLLevelSelectScene.h; sourceTree = "<group>"; };
 		F2C094E0191EDA5A00E7B583 /* SLLevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLLevelSelectScene.m; path = Scenes/SLLevelSelectScene.m; sourceTree = "<group>"; };
 		F2C094E2191F0DE400E7B583 /* SLDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDefines.h; path = "Supporting Files/SLDefines.h"; sourceTree = "<group>"; };
+		F2EBB7311921C63600D1EE71 /* SLLevels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SLLevels.plist; path = "Supporting Files/SLLevels.plist"; sourceTree = "<group>"; };
 		F2F5C8DB176A79F300043C42 /* SpaceLlamas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLlamas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F5C8DE176A79F300043C42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F2F5C8E0176A79F300043C42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,6 +141,7 @@
 				F2C094E0191EDA5A00E7B583 /* SLLevelSelectScene.m */,
 				F2ADA4F41921B2EF0053C02F /* SLGameScene.h */,
 				F2ADA4F51921B2EF0053C02F /* SLGameScene.m */,
+				F2EBB7311921C63600D1EE71 /* SLLevels.plist */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				F2F5C8EB176A79F300043C42 /* InfoPlist.strings in Resources */,
 				F24EB1AD191C673C00B3F13E /* title-background.png in Resources */,
 				F2ADA4FA1921B5B70053C02F /* level-background-01.png in Resources */,
+				F2EBB7321921C63600D1EE71 /* SLLevels.plist in Resources */,
 				F2F5C8FE176A79F300043C42 /* Images.xcassets in Resources */,
 				F2F5C8F4176A79F300043C42 /* Main.storyboard in Resources */,
 			);
