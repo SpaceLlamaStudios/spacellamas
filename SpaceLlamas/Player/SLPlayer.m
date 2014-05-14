@@ -1,54 +1,22 @@
+//
+//  SLPlayer.m
+//  SpaceLlamas
+//
+//  Created by Elsie Ng on 2014-05-13.
+//  Copyright (c) 2014 Space Llama Studios. All rights reserved.
+//
+
 #import "SLPlayer.h"
-
-
-#pragma mark Constants
-
-
-#pragma mark - Class Extension
-
-@interface SLPlayer ()
-
-@end
-
-
-#pragma mark - Class Variables
-
-
-#pragma mark - Class Definition
 
 @implementation SLPlayer
 
-
-#pragma mark - Properties
-
-
-#pragma mark - Constructors
-
-- (id)init
+- (instancetype)init
 {
-	// Abort if base initializer fails.
-	if ((self = [super init]) == nil)
+	if ((self = [super initWithImageNamed:@"player-spacellama-normal" maxHp:10]))
 	{
-		return nil;
+	
 	}
-	
-	// Initialize instance variables.
-	
-	// Return initialized instance.
 	return self;
 }
-
-
-#pragma mark - Public Methods
--(void) updatePlayerPosition
-{
-
-}
-
-#pragma mark - Overridden Methods
-
-
-#pragma mark - Private Methods
-
 
 @end

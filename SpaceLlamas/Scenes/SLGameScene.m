@@ -7,6 +7,7 @@
 //
 
 #import "SLGameScene.h"
+#import "SLPlayer.h"
 
 @implementation SLGameScene
 {
@@ -25,7 +26,8 @@
 	
 	[self setUpLayers];
 	[self setUpGame];
-	[self initPlayer];
+	[self setUpPlayer];
+	[self spawnPlayer];
 	
     return self;
 
@@ -45,19 +47,25 @@
 }
 
 #pragma mark - Player
--(void) initPlayer
+- (void)setUpPlayer
 {
-	SKSpriteNode *player = [SKSpriteNode spriteNodeWithImageNamed:@"player-spacellama-normal"];
-	CGPoint startLocation = CGPointMake(0 + player.size.width/2, self.frame.size.height/2);
-	player.position = startLocation;
-	[self addChild: player];
+	_player = [[SLPlayer alloc] init];
+	_player.position = CGPointMake(0, self.size.height * 0.5);
+	_player.zPosition = 1;
+	_player.name = @"player";
+	[_gameLayer addChild:_player];
 }
 
--(void) fireMissile
+- (void)spawnPlayer
 {
-	NSLog(@"FIRE ZE MISSILES");
+	SKAction *moveAction1 = [SKAction moveBy:CGVectorMake(_player.size.width/2 + self.size.width * 0.3, 0) duration:0.5];
+	moveAction1.timingMode = SKActionTimingEaseOut;
+	SKAction *moveAction2 = [SKAction moveBy: CGVectorMake(-self.size.width * 0.2, 0) duration:0.5];
+	moveAction2.timingMode = SKActionTimingEaseInEaseOut;
+	[_player runAction:[SKAction sequence:@[moveAction1, moveAction2]]];
 }
 
+#pragma mark - Game
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }

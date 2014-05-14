@@ -8,6 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@class SLPlayer;
+
 @interface SLGameScene : SKScene
+
+@property (strong) SLPlayer * player;
 
 @end

@@ -1,28 +1,13 @@
-#import <Foundation/Foundation.h>
+//
+//  SLPlayer.h
+//  SpaceLlamas
+//
+//  Created by Elsie Ng on 2014-05-13.
+//  Copyright (c) 2014 Space Llama Studios. All rights reserved.
+//
 
+#import "SLEntity.h"
 
-#pragma mark Constants
-
-
-#pragma mark - Enumerations
-
-
-#pragma mark - Class Interface
-
-@interface SLPlayer : NSObject
-
-
-#pragma mark - Properties
-@property (nonatomic) CGPoint *playerPosition;
-
-
-#pragma mark - Constructors
-
-
-#pragma mark - Static Methods
--(void) updatePlayerPosition;
-
-#pragma mark - Instance Methods
-
+@interface SLPlayer : SLEntity
 
 @end
