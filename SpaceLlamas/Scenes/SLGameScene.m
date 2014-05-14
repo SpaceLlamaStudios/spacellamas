@@ -13,6 +13,7 @@
 {
 	SKNode *_gameLayer;
 	SKNode *_background;
+	SKSpriteNode *_selectedNode;
 }
 
 -(id)initWithSize:(CGSize)size
@@ -42,6 +43,7 @@
 -(void)setUpGame
 {
 	_background = [SKSpriteNode spriteNodeWithImageNamed:@"level-background-01"];
+	_background.name = @"background";
 	_background.position = CGPointMake(self.size.width/2, self.size.height/2);
 	[_gameLayer addChild:_background];
 }
@@ -52,7 +54,7 @@
 	_player = [[SLPlayer alloc] init];
 	_player.position = CGPointMake(0, self.size.height * 0.5);
 	_player.zPosition = 1;
-	_player.name = @"player";
+	[_player setName:@"player"];
 	[_gameLayer addChild:_player];
 }
 
@@ -65,7 +67,91 @@
 	[_player runAction:[SKAction sequence:@[moveAction1, moveAction2]]];
 }
 
-#pragma mark - Game
+#pragma mark - Player Controls
+
+//Get Node for touch location
+- (void)selectNodeForTouch:(CGPoint)touchLocation {
+	SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchLocation];
+	//if not player node reset stuff
+	if(![_selectedNode isEqual:touchedNode]) {
+		[_selectedNode removeAllActions];
+		_selectedNode = touchedNode;
+	}
+}
+
+//Create pan gesture recognizer
+- (void)didMoveToView:(SKView *)view {
+	UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
+	[[self view] addGestureRecognizer:gestureRecognizer];
+}
+
+//Pan gesture recognizer
+- (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer
+{
+	//Start pan gesture recognizer
+	if (recognizer.state == UIGestureRecognizerStateBegan)
+	{
+		//Get touch location and determine what node it is
+        CGPoint touchLocation = [recognizer locationInView:recognizer.view];
+		touchLocation = [self convertPointFromView:touchLocation];
+		[self selectNodeForTouch:touchLocation];
+    }
+	//catch if the touch position changes (dragged)
+	else if (recognizer.state == UIGestureRecognizerStateChanged) {
+		//create translation
+		CGPoint translation = [recognizer translationInView:recognizer.view];
+		translation = CGPointMake(translation.x, -translation.y);
+		[self updateNodePosition:translation];
+		//set translation to recognizer origin
+		[recognizer setTranslation:CGPointZero inView:recognizer.view];
+ 
+    }
+	//If no more touch
+	else if (recognizer.state == UIGestureRecognizerStateEnded)
+	{
+		//if node was the player
+		if ([[_selectedNode name] isEqualToString:@"player"])
+		{
+			//...remove all actions
+			[_selectedNode removeAllActions];
+		}
+	}
+}
+
+//Set new position for player
+- (void)updateNodePosition:(CGPoint)translation
+{
+	//if player, set new position plus translation on y axis
+    if([[_selectedNode name] isEqualToString:@"player"])
+	{
+		CGPoint position = [_selectedNode position];
+        [_selectedNode setPosition:CGPointMake(position.x, position.y + translation.y)];
+    }
+	//if not player, don't move the node
+	else
+	{
+		CGPoint position = [_selectedNode position];
+		[_selectedNode setPosition:CGPointMake(position.x, position.y)];
+	}
+}
+
+//do stuff when touch moves
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	//get touch location and move based on previous location and new position
+	
+	//TODO: Top and bottom bounds
+	
+	UITouch *touch = [touches anyObject];
+	CGPoint positionInScene = [touch locationInNode:self];
+	CGPoint previousPosition = [touch previousLocationInNode:self];
+	CGPoint translation = CGPointMake(positionInScene.x - previousPosition.x, positionInScene.y - previousPosition.y);
+	
+	//update node position
+	[self updateNodePosition:translation];
+}
+
+//TODO: Fire HUD (multitouch)
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
