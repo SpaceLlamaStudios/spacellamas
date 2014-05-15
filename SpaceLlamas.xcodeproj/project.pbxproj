@@ -13,9 +13,12 @@
 		F2ADA4F61921B2EF0053C02F /* SLGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F2ADA4F51921B2EF0053C02F /* SLGameScene.m */; };
 		F2ADA4FA1921B5B70053C02F /* level-background-01.png in Resources */ = {isa = PBXBuildFile; fileRef = F2ADA4F91921B5B70053C02F /* level-background-01.png */; };
 		F2C094E1191EDA5A00E7B583 /* SLLevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C094E0191EDA5A00E7B583 /* SLLevelSelectScene.m */; };
+		F2C431DE192449F300A7317A /* player-bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C431DD192449F300A7317A /* player-bullet.png */; };
+		F2C431E019244DAD00A7317A /* hud-fire-button.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C431DF19244DAD00A7317A /* hud-fire-button.png */; };
 		F2EBB7321921C63600D1EE71 /* SLLevels.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2EBB7311921C63600D1EE71 /* SLLevels.plist */; };
 		F2EBB73C1922F0A900D1EE71 /* SLEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBB73B1922F0A900D1EE71 /* SLEntity.m */; };
 		F2EBB73F1922F11C00D1EE71 /* SLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBB73E1922F11C00D1EE71 /* SLPlayer.m */; };
+		F2EBB7471924466B00D1EE71 /* SLBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBB7461924466B00D1EE71 /* SLBullet.m */; };
 		F2F5C8DF176A79F300043C42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8DE176A79F300043C42 /* Foundation.framework */; };
 		F2F5C8E1176A79F300043C42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8E0176A79F300043C42 /* CoreGraphics.framework */; };
 		F2F5C8E3176A79F300043C42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F5C8E2176A79F300043C42 /* UIKit.framework */; };
@@ -55,11 +58,15 @@
 		F2C094DF191EDA5A00E7B583 /* SLLevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLLevelSelectScene.h; path = Scenes/SLLevelSelectScene.h; sourceTree = "<group>"; };
 		F2C094E0191EDA5A00E7B583 /* SLLevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLLevelSelectScene.m; path = Scenes/SLLevelSelectScene.m; sourceTree = "<group>"; };
 		F2C094E2191F0DE400E7B583 /* SLDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDefines.h; path = "Supporting Files/SLDefines.h"; sourceTree = "<group>"; };
+		F2C431DD192449F300A7317A /* player-bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-bullet.png"; sourceTree = "<group>"; };
+		F2C431DF19244DAD00A7317A /* hud-fire-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud-fire-button.png"; sourceTree = "<group>"; };
 		F2EBB7311921C63600D1EE71 /* SLLevels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SLLevels.plist; path = "Supporting Files/SLLevels.plist"; sourceTree = "<group>"; };
 		F2EBB73A1922F0A900D1EE71 /* SLEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLEntity.h; sourceTree = "<group>"; };
 		F2EBB73B1922F0A900D1EE71 /* SLEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLEntity.m; sourceTree = "<group>"; };
 		F2EBB73D1922F11C00D1EE71 /* SLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLPlayer.h; path = Player/SLPlayer.h; sourceTree = "<group>"; };
 		F2EBB73E1922F11C00D1EE71 /* SLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLPlayer.m; path = Player/SLPlayer.m; sourceTree = "<group>"; };
+		F2EBB7451924466B00D1EE71 /* SLBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBullet.h; sourceTree = "<group>"; };
+		F2EBB7461924466B00D1EE71 /* SLBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBullet.m; sourceTree = "<group>"; };
 		F2F5C8DB176A79F300043C42 /* SpaceLlamas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLlamas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F5C8DE176A79F300043C42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F2F5C8E0176A79F300043C42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +126,8 @@
 		F24EB1A9191C66C600B3F13E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F2C431DF19244DAD00A7317A /* hud-fire-button.png */,
+				F2C431DD192449F300A7317A /* player-bullet.png */,
 				F2ADA4F91921B5B70053C02F /* level-background-01.png */,
 				F24EB1AC191C673C00B3F13E /* title-background.png */,
 				F24EB1AA191C66C600B3F13E /* player-spacellama-normal.png */,
@@ -147,6 +156,17 @@
 				F2EBB7311921C63600D1EE71 /* SLLevels.plist */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		F2EBB7441924463C00D1EE71 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F2EBB73A1922F0A900D1EE71 /* SLEntity.h */,
+				F2EBB73B1922F0A900D1EE71 /* SLEntity.m */,
+				F2EBB7451924466B00D1EE71 /* SLBullet.h */,
+				F2EBB7461924466B00D1EE71 /* SLBullet.m */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		F2F5C8D2176A79F300043C42 = {
@@ -196,8 +216,7 @@
 				F2F5C8E7176A79F300043C42 /* Supporting Files */,
 				F26FBF0F191D8E230002D149 /* SLLevelManager.h */,
 				F26FBF10191D8E230002D149 /* SLLevelManager.m */,
-				F2EBB73A1922F0A900D1EE71 /* SLEntity.h */,
-				F2EBB73B1922F0A900D1EE71 /* SLEntity.m */,
+				F2EBB7441924463C00D1EE71 /* Entities */,
 			);
 			path = SpaceLlamas;
 			sourceTree = "<group>";
@@ -312,12 +331,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C431E019244DAD00A7317A /* hud-fire-button.png in Resources */,
 				F24EB1AB191C66C600B3F13E /* player-spacellama-normal.png in Resources */,
 				F2F5C8EB176A79F300043C42 /* InfoPlist.strings in Resources */,
 				F24EB1AD191C673C00B3F13E /* title-background.png in Resources */,
 				F2ADA4FA1921B5B70053C02F /* level-background-01.png in Resources */,
 				F2EBB7321921C63600D1EE71 /* SLLevels.plist in Resources */,
 				F2F5C8FE176A79F300043C42 /* Images.xcassets in Resources */,
+				F2C431DE192449F300A7317A /* player-bullet.png in Resources */,
 				F2F5C8F4176A79F300043C42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +362,7 @@
 				F2EBB73C1922F0A900D1EE71 /* SLEntity.m in Sources */,
 				F2F5C8FA176A79F300043C42 /* SLTitleScene.m in Sources */,
 				F2EBB73F1922F11C00D1EE71 /* SLPlayer.m in Sources */,
+				F2EBB7471924466B00D1EE71 /* SLBullet.m in Sources */,
 				F2F5C8F7176A79F300043C42 /* SLViewController.m in Sources */,
 				F2C094E1191EDA5A00E7B583 /* SLLevelSelectScene.m in Sources */,
 				F2F5C8F1176A79F300043C42 /* SLAppDelegate.m in Sources */,

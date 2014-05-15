@@ -8,12 +8,15 @@
 
 #import "SLGameScene.h"
 #import "SLPlayer.h"
+#import "SLBullet.h"
 
 @implementation SLGameScene
 {
 	SKNode *_gameLayer;
 	SKNode *_background;
 	SKSpriteNode *_selectedNode;
+	
+	SKSpriteNode *_fireButton;
 }
 
 -(id)initWithSize:(CGSize)size
@@ -29,6 +32,7 @@
 	[self setUpGame];
 	[self setUpPlayer];
 	[self spawnPlayer];
+	[self setUpHud];
 	
     return self;
 
@@ -51,7 +55,7 @@
 #pragma mark - Player
 - (void)setUpPlayer
 {
-	_player = [[SLPlayer alloc] init];
+	_player = [SLPlayer new];
 	_player.position = CGPointMake(0, self.size.height * 0.5);
 	_player.zPosition = 1;
 	[_player setName:@"player"];
@@ -65,6 +69,14 @@
 	SKAction *moveAction2 = [SKAction moveBy: CGVectorMake(-self.size.width * 0.2, 0) duration:0.5];
 	moveAction2.timingMode = SKActionTimingEaseInEaseOut;
 	[_player runAction:[SKAction sequence:@[moveAction1, moveAction2]]];
+}
+
+- (void)setUpHud
+{
+	_fireButton = [SKSpriteNode spriteNodeWithImageNamed:@"hud-fire-button"];
+	_fireButton.name = @"fireButton";
+	_fireButton.position = CGPointMake(self.frame.size.width - _fireButton.size.width, self.frame.size.height/2);
+	[_gameLayer addChild:_fireButton];
 }
 
 #pragma mark - Player Controls
@@ -104,7 +116,6 @@
 		[self updateNodePosition:translation];
 		//set translation to recognizer origin
 		[recognizer setTranslation:CGPointZero inView:recognizer.view];
- 
     }
 	//If no more touch
 	else if (recognizer.state == UIGestureRecognizerStateEnded)
@@ -151,6 +162,26 @@
 }
 
 //TODO: Fire HUD (multitouch)
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	[self spawnBullet];
+	
+}
+//Fire ze lazerz!!
+- (void)spawnBullet
+{
+	SLBullet *bullet = [SLBullet new];
+	bullet.position = CGPointMake(_player.position.x +6, _player.position.y - 4);
+	bullet.name = @"bullet";
+	[_gameLayer addChild:bullet];
+	
+	bullet.alpha = 0;
+	[bullet runAction: [SKAction fadeAlphaTo:1.0 duration:0.1]];
+	SKAction *actionMove = [SKAction moveToX: self.size.width + bullet.size.width/2 duration: 0.75];
+	SKAction *actionRemove = [SKAction removeFromParent];
+	[bullet runAction:[SKAction sequence:@[actionMove, actionRemove]]];
+	
+}
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
